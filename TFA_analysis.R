@@ -7,7 +7,7 @@ library(lubridate)
 
 
 
-universal_function <-
+universal_function =
   function(filelist, pivot = TRUE, startdate, enddate) {
     sensor_1 <- list.files(filelist, full.names = TRUE)
     
@@ -44,6 +44,8 @@ universal_function <-
       return(final)
     }
   }
+
+# quick apply
 
 universal_function("JULI_1",
                    pivot = TRUE,
