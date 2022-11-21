@@ -1,4 +1,10 @@
 
+library(tidyverse)
+library(lubridate)
+require(reshape2)
+source("TFA_analysis.R")
+
+
 # prepare data 
 
 Kalenborn = universal_function("Oktober_2022_Kalenborn",
@@ -42,9 +48,9 @@ Lmittel = round(mean(Langenfeld_val$Mittel), digits = 2)
 Kalenborn$Ort = rep(paste0("Kalenborn-Scheuern"," ","Tmin ="," ",Kmin," ", "Tmax ="," ",K_max," ", "Tmean =", " ",Kmittel), nrow(Kalenborn[, 1]))
 Langenfeld$Ort = rep(paste0("Langenfeld"," ","Tmin ="," ",Lmin," ", "Tmax ="," ",L_max," ", "Tmean =", " ",Lmittel), nrow(Langenfeld[, 1]))
 df = rbind(Langenfeld,Kalenborn)
-tail(df)
+
 # visualization 
-require(reshape2)
+
 
 
 #dir.create("October_2022_result")
